@@ -1,0 +1,21 @@
+import java.sql.*;
+import java.util.Scanner;
+public class CRUDFirst {
+
+	// JDBC driver name and database URL
+	   static final String JDBC_DRIVER = "org.postgresql.Driver";  
+	   static final String DB_URL = "jdbc:postgresql://localhost/dbp";
+
+	   //  Database credentials
+	   static final String USER = "Testuser";
+	   static final String PASS = "passwoo";
+	   
+	   static Scanner scan = new Scanner(System.in);
+	   
+	public static void main(String[] args) {
+		while(true){
+			String input = scan.next();
+			
+		}
+	}
+}
