@@ -1,0 +1,14 @@
+
+public class Singelton {
+	private static Singelton instance = null;
+	private Singelton(){}
+	
+	public static Singelton getInstance(){
+		if(instance==null){
+			instance=new Singelton();
+			System.out.println("Singleton erstellt");
+		}
+		return instance;
+	}
+	
+}
