@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+
+public class main {
+
+	public static void main(String[] args) {
+		//Erzeugen des Context
+		StrategyContext ctx = new StrategyContext();
+		
+		//Setzen der Strategy
+		ctx.setStrategy(new StrategyZIP());
+
+		//Daten erzeguen
+		ArrayList<String> list = new ArrayList<>();
+		
+		//ausführen der gesetzten Strategie
+		ctx.exeuteStrategy();
+	}
+
+}

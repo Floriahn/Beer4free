@@ -4,4 +4,8 @@
 <fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Singelton"/>
+<fullyQualifiedTypeName name="IStrategy"/>
+<fullyQualifiedTypeName name="StrategyContext"/>
+<fullyQualifiedTypeName name="StrategyZIP"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

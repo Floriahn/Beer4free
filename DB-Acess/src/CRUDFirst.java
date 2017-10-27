@@ -14,9 +14,9 @@ public class CRUDFirst {
 	   
 	   static Connection conn = null;
 	   static Statement stmt = null;
+	   
+	   static boolean isviable=false;
 	public static void main(String[] args) {
-		
-		
 		
 		while(true){
 			System.out.println("Was wollen Sie machen(Create, Read, Update, Delete)");
@@ -24,8 +24,12 @@ public class CRUDFirst {
 			
 			switch(input.toLowerCase()){
 			case"read":{
+				isviable=true;
 				System.out.println("Welche Tabelle wollen Sie ausgeben?:");
 			}
+			}
+			if(!isviable){
+				System.out.println("Falsche Eingabe!");
 			}
 		}
 	}
