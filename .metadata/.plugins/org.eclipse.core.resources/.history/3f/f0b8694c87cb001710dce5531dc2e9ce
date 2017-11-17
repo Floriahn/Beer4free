@@ -86,7 +86,7 @@ public class CRUDFirst {
 				try {
 					stm = conn.prepareStatement(UPDATE_DATA_SQL);
 					System.out.println("ID:");
-					stm.setInt(4, scan.nextInt());
+					stm.setString(4, scan.next());
 					System.out.println("neuer Vorname:");
 					stm.setString(1, scan.next());
 					System.out.println("neuer Name:");

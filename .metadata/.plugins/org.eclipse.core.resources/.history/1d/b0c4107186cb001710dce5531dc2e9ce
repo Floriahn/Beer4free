@@ -20,8 +20,8 @@ public class CRUDFirst {
 	   private static final String CREATE_TABLE_SQL = "CREATE TABLE IF NOT EXISTS person (id SERIAL, first character varying not null, last character varying not null, age int)";
 	   private static final String READ_TABLE_SQL = "SELECT id, first, last, age FROM person";
 	   private static final String CREATE_DATA_SQL = "INSERT INTO person (first, last, age) VALUES(?, ?, ?)";
-	   private static final String DELETE_DATA_SQL = "DELETE FROM person WHERE id=?";
-	   private static final String UPDATE_DATA_SQL = "UPDATE person SET first=?, last=?, age=? WHERE id=?";
+	   private static final String DELETE_DATA_SQL = "DELETE FROM person WHERE first=? AND last=?";
+	   private static final String UPDATE_DATA_SQL = "UPDATE person SET first=?, last=?, age=? WHERE first=? AND last=?";
 	   
 	public static void main(String[] args) {
 		   
@@ -49,7 +49,7 @@ public class CRUDFirst {
 				         int age = rs.getInt("age");
 
 				         //Display values
-				         System.out.print("ID: " + id);
+				         System.out.print("IS: " + id);
 				         System.out.print(", First: " + first);
 				         System.out.print(", Last: " + last);
 				         System.out.println(", Age: " + age);
@@ -85,8 +85,10 @@ public class CRUDFirst {
 				PreparedStatement stm;
 				try {
 					stm = conn.prepareStatement(UPDATE_DATA_SQL);
-					System.out.println("ID:");
-					stm.setInt(4, scan.nextInt());
+					System.out.println("Vorname:");
+					stm.setString(4, scan.next());
+					System.out.println("Name:");
+					stm.setString(5, scan.next());
 					System.out.println("neuer Vorname:");
 					stm.setString(1, scan.next());
 					System.out.println("neuer Name:");
@@ -106,8 +108,10 @@ public class CRUDFirst {
 				PreparedStatement stm;
 				try {
 					stm = conn.prepareStatement(DELETE_DATA_SQL);
-					System.out.println("ID:");
-					stm.setInt(1, scan.nextInt());
+					System.out.println("Vorname:");
+					stm.setString(1, scan.next());
+					System.out.println("Name:");
+					stm.setString(2, scan.next());
 					stm.executeUpdate();
 					stm.close();
 				} catch (SQLException e) {
