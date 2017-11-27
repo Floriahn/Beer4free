@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Heizverwaltung&apos; to &apos;Hausverwaltung&apos;&#x0D;&#x0A;- Original project: &apos;Observer Pattern&apos;&#x0D;&#x0A;- Original element: &apos;Heizverwaltung&apos;&#x0D;&#x0A;- Renamed element: &apos;Hausverwaltung&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Heizverwaltung&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Heizverwaltung.java[Heizverwaltung" matchStrategy="1" name="Hausverwaltung" qualified="false" references="true" similarDeclarations="false" stamp="1511778292317" textual="false" version="1.0"/>
+</session>

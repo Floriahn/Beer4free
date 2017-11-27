@@ -1,0 +1,17 @@
+import java.util.ArrayList;
+
+public class Heizung {
+
+	double heizwert=0;
+	ArrayList<IHeizObserver> observer = new ArrayList<IHeizObserver>();
+	
+	public double getHeizWert(){
+		return heizwert;
+	}
+	public void setHeizWert(double x){
+		heizwert=x;
+	}
+	public void subscribe(IHeizObserver obs){
+		observer.add(obs);
+	}
+}

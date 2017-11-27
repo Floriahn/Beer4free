@@ -1,0 +1,7 @@
+import java.util.ArrayList;
+
+public class Heizung {
+
+	double heizwert=0;
+	ArrayList<IHeizObserver> observer = new ArrayList<IHeizObserver>();
+}

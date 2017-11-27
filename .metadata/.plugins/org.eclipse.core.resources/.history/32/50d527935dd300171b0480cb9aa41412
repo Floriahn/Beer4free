@@ -1,0 +1,12 @@
+
+public class TestPattern {
+
+	IHeizObserver heizung = new Hausmeister();
+	IHeizObserver verwaltung = new Hausverwaltung();
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
