@@ -1,8 +1,0 @@
-
-public class Hausmeister {
-
-	
-	public void update(){
-		System.out.println(this.toString()+": "+Heizung.getHeizWert());
-	}
-}

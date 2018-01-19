@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
 <fullyQualifiedTypeName name="Singelton"/>
 <fullyQualifiedTypeName name="IStrategy"/>
 <fullyQualifiedTypeName name="StrategyContext"/>
 <fullyQualifiedTypeName name="StrategyZIP"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Heizung"/>
+<fullyQualifiedTypeName name="Hausmeister"/>
+<fullyQualifiedTypeName name="IHeizObserver"/>
+<fullyQualifiedTypeName name="Hausverwaltung"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
 </qualifiedTypeNameHistroy>

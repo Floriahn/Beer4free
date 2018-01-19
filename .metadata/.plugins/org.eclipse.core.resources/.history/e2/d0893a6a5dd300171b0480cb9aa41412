@@ -1,7 +1,0 @@
-
-public class Hausverwaltung {
-
-	public void update(){
-		System.out.println(this.toString()+": "+Heizung.getHeizWert());
-	}
-}

@@ -122,17 +122,9 @@ public class CRUDFirst {
 			}
 			case"verbinden":{
 				try {
-			    	//STEP 2: Register JDBC driver
-			    	Class.forName(JDBC_DRIVER);
-					//STEP 3: Open a connection
-				    System.out.println("Connecting to database...");
-				    conn = DriverManager.getConnection(DB_URL,USER,PASS);
-				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					conn = getConnection();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
 				}
 				verbindung=true;
 				//tabelle wird hier erstellt, da create für datensätze dient und erst eine Verbindung bestehen
@@ -162,6 +154,21 @@ public class CRUDFirst {
 			
 			System.out.println("Falsche Eingabe!");
 			
+		}
+	}
+	
+	
+	private static Connection getConnection() throws SQLException{
+		//STEP 2: Register JDBC driver
+    	try {
+			Class.forName(JDBC_DRIVER);
+			//STEP 3: Open a connection
+		    System.out.println("Connecting to database...");
+		    return DriverManager.getConnection(DB_URL,USER,PASS);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
 		}
 	}
 }

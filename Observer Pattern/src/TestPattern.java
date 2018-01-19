@@ -8,8 +8,8 @@ public class TestPattern {
 	static Heizung heizung = new Heizung();
 	
 	public static void main(String[] args) {
-		heizung.subscribe(hausmeister);
 		heizung.subscribe(verwaltung);
+		heizung.subscribe(hausmeister);
 		
 		heizung.setHeizWert(15);
 		
