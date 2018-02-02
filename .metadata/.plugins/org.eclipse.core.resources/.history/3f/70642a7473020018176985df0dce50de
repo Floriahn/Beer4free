@@ -1,0 +1,20 @@
+import java.sql.SQLException;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class UnitTests {
+
+	@Test
+	void verbindung(){
+		try {
+			DBManager manager = DBManager.getInstance();
+			Assert.assertEquals(manager, !null);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

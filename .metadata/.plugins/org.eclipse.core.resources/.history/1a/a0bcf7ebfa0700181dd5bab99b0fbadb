@@ -1,0 +1,101 @@
+import java.sql.Date;
+
+public class Gast{
+	
+	private String id;
+	private String nachname;
+	private String gebdat;
+	private String plz;
+	private String land;
+	private String hausnmr;
+	
+	private String number;
+	private String name;
+	
+	private String insert = "INSERT INTO Gast (Nachname, Geburtsdatum, PLZ, Land, Hausnummer";
+	
+	public Gast(String nachname, String gebdat, String plz, String land, String hausnmr, String number, String name){
+		this.nachname = nachname;
+		this.gebdat = gebdat;
+		this.plz = plz;
+		this.land = land;
+		this.hausnmr = hausnmr;
+		this.number = number;
+		this.name = name;
+	}
+	
+	public Gast(){
+		
+	}
+	
+	public String getInsertString(){
+		int x =0;
+		if (number != null){
+			insert += ", Telefonnummer";
+			x++;
+		}
+		if (name != null){
+			insert += ", Name";
+			x++;
+		}
+
+		insert += ") VALUES(?, ?, ?, ?, ?";
+		for(int i=0;i<=x;i++){
+			insert += ", ?";
+		}
+		
+		insert += ")";
+		
+		return insert;
+	}
+	
+	//Setters
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
+	}
+	public void setGebdat(Date gebdat) {
+		this.gebdat = gebdat;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public void setPlz(String plz) {
+		this.plz = plz;
+	}
+	public void setLand(String land) {
+		this.land = land;
+	}
+	public void setHausnmr(String hausnmr) {
+		this.hausnmr = hausnmr;
+	}
+	
+	//Getters
+	public String getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getNachname() {
+		return nachname;
+	}
+	public Date getGebdat() {
+		return gebdat;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public String getPlz() {
+		return plz;
+	}
+	public String getLand() {
+		return land;
+	}
+	public String getHausnmr() {
+		return hausnmr;
+	}
+	
+}

@@ -1,0 +1,83 @@
+import java.sql.Date;
+
+public class Gast{
+	
+	private String id;
+	private String nachname;
+	private Date gebdat;
+	private String plz;
+	private String land;
+	private String hausnmr;
+	
+	private String number;
+	private String name;
+	
+	private String insert = "INSERT INTO Gast (GID, Nachname, Geburtsdatum, PLZ, Land, Hausnummer";
+	
+	public Gast(){
+		
+	}
+	
+	public String getInsertString(){
+		if (number != null){
+			insert += ", Telefonnummer";
+		}
+		if (name != null){
+			insert += ", Name";
+		}
+		
+		insert += ") VALUES(";
+		
+		return insert;
+	}
+	
+	//Setters
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setNachname(String nachname) {
+		this.nachname = nachname;
+	}
+	public void setGebdat(Date gebdat) {
+		this.gebdat = gebdat;
+	}
+	public void setNumber(String number) {
+		this.number = number;
+	}
+	public void setPlz(String plz) {
+		this.plz = plz;
+	}
+	public void setLand(String land) {
+		this.land = land;
+	}
+	public void setHausnmr(String hausnmr) {
+		this.hausnmr = hausnmr;
+	}
+	
+	//Getters
+	public String getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getNachname() {
+		return nachname;
+	}
+	public Date getGebdat() {
+		return gebdat;
+	}
+	public String getNumber() {
+		return number;
+	}
+	public String getPlz() {
+		return plz;
+	}
+	public String getLand() {
+		return land;
+	}
+	public String getHausnmr() {
+		return hausnmr;
+	}
+	
+}
