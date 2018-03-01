@@ -1,6 +1,0 @@
-
-public class Zimmer {
-
-	private int betten;
-	private String eingenschaft;
-}
