@@ -228,8 +228,7 @@ public class View {
 		
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				button_1.setEnabled(false);
-				button_2.setEnabled(true);
+				
 				try {
 					DBManager manager = DBManager.getInstance();
 					gastl = manager.readGastbySurName(nachnametxt.getText());

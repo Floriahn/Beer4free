@@ -13,7 +13,7 @@ public class DBManager {
 	static final String JDBC_DRIVER = "org.postgresql.Driver";  
 	static final String DB_URL = "jdbc:postgresql://localhost/TestDrivenHotelDB";
 	
-	private static final String READ_GAST_SUR_SQL = "SELECT * FROM gast where nachname like ? order by nachname";
+	private static final String READ_GAST_SUR_SQL = "SELECT * FROM gast where nachname like ? order by gid";
 	private static final String READ_ZIMMER_BETTEN_SQL = "SELECT * FROM zimmer where betten = ? order by zid";
 	private static final String READ_GAST_ID_SQL ="SELECT * FROM gast where gid = ?";
 	private static final String READ_ZIMMER_ID_SQL="SELECT * FROM zimmer where zid = ?";
