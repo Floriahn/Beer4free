@@ -4,8 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -133,7 +131,5 @@ public class InsertZimmer {
 		});
 		button.setBounds(139, 265, 104, 31);
 		frame.getContentPane().add(button);
-		
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	}
 }

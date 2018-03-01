@@ -4,8 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
-
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -15,7 +13,7 @@ import java.awt.event.ActionEvent;
 
 public class InsertZimmer {
 
-	JFrame frame;
+	private JFrame frame;
 	private JTextField bettentxt;
 	private JTextField lagetxt;
 	private JTextField eigenschafttxt;
@@ -25,18 +23,18 @@ public class InsertZimmer {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					InsertZimmer window = new InsertZimmer();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					InsertZimmer window = new InsertZimmer();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.
@@ -133,7 +131,5 @@ public class InsertZimmer {
 		});
 		button.setBounds(139, 265, 104, 31);
 		frame.getContentPane().add(button);
-		
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	}
 }

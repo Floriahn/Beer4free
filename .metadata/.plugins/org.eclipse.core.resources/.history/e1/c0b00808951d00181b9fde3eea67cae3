@@ -144,6 +144,6 @@ public class InsertGast {
 		lblMuss.setBounds(10, 393, 256, 14);
 		frame.getContentPane().add(lblMuss);
 		
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 }

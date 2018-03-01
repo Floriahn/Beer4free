@@ -2,7 +2,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -143,7 +142,5 @@ public class InsertGast {
 		JLabel lblMuss = new JLabel("* = muss angegeben werden");
 		lblMuss.setBounds(10, 393, 256, 14);
 		frame.getContentPane().add(lblMuss);
-		
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	}
 }

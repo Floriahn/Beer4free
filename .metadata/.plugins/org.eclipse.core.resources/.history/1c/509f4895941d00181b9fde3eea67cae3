@@ -59,13 +59,6 @@ public class View {
 		
 		
 		JMenuItem mntmZimmer = new JMenuItem("Zimmer");
-		mntmZimmer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("gast");
-				InsertZimmer zimmer = new InsertZimmer();
-				zimmer.frame.setVisible(true);
-			}
-		});
 		mnAnlegen.add(mntmZimmer);
 		
 		JMenuItem mntmGast = new JMenuItem("Gast");

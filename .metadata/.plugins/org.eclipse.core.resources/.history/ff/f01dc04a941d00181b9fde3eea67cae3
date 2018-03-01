@@ -2,7 +2,6 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -12,7 +11,7 @@ import java.awt.event.ActionEvent;
 
 public class InsertGast {
 
-	JFrame frame;
+	private JFrame frame;
 	private JTextField nachnametxt;
 	private JTextField nametxt;
 	private JTextField GDtxt;
@@ -24,18 +23,18 @@ public class InsertGast {
 	/**
 	 * Launch the application.
 	 */
-//	public static void main(String[] args) {
-//		EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				try {
-//					InsertGast window = new InsertGast();
-//					window.frame.setVisible(true);
-//				} catch (Exception e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		});
-//	}
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					InsertGast window = new InsertGast();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the application.
@@ -143,7 +142,5 @@ public class InsertGast {
 		JLabel lblMuss = new JLabel("* = muss angegeben werden");
 		lblMuss.setBounds(10, 393, 256, 14);
 		frame.getContentPane().add(lblMuss);
-		
-		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 	}
 }
