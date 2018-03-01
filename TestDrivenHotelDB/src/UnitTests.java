@@ -24,7 +24,7 @@ public class UnitTests {
 	public void insertGast(){
 		try {
 			DBManager manager = DBManager.getInstance();
-			Gast testg = new Gast("Friedels", "08-11-1998", "6561", "Oesterreich", "Oberer Kw. 4", "061/34", "Benni");
+			Gast testg = new Gast("Friedels", "1998-11-08", "6561", "Oesterreich", "Oberer Kw. 4", "061/34", "Benni");
 			
 			//manager.insertGast(testg);
 		} catch (ClassNotFoundException | SQLException e) {
@@ -106,16 +106,16 @@ public class UnitTests {
 			ArrayList<Gast> gist = new ArrayList<>();
 			gist=manager.readGastbySurName("Griesebner");
 			
-			System.out.println("Test");
-			System.out.println(gist.get(0).getName());
-			
-			gist.get(0).setName("flirian");
-			manager.updateGast(gist.get(0));
-			
-			gist = manager.readGastbySurName("Griesebner");
-			
-			System.out.println("After:");
-			System.out.println(gist.get(0).getName());
+//			System.out.println("Test");
+//			System.out.println(gist.get(0).getName());
+//			
+//			gist.get(0).setName("flirian");
+//			manager.updateGast(gist.get(0));
+//			
+//			gist = manager.readGastbySurName("Griesebner");
+//			
+//			System.out.println("After:");
+//			System.out.println(gist.get(0).getName());
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -130,16 +130,44 @@ public class UnitTests {
 			ArrayList<Zimmer> zist = new ArrayList<>();
 			zist=manager.readZimmerbyBetten(3);
 			
-			System.out.println("Test");
-			System.out.println(zist.get(0).getNummer());
+//			System.out.println("Test");
+//			System.out.println(zist.get(0).getNummer());
+//			
+//			zist.get(0).setNummer("123KAPPA");
+//			manager.updateZimmer(zist.get(0));
+//			
+//			zist = manager.readZimmerbyBetten(3);
+//			
+//			System.out.println("After:");
+//			System.out.println(zist.get(0).getNummer());
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void insertBuchung(){
+		try {
+			DBManager manager = DBManager.getInstance();
 			
-			zist.get(0).setNummer("123KAPPA");
-			manager.updateZimmer(zist.get(0));
+			Gast g = manager.readGastbyID(15);
+			Zimmer z = manager.readZimmerbyID(5);
+			Buchung b = new Buchung(g, z, "2018-03-01", "2018-03-11", 3, false);
 			
-			zist = manager.readZimmerbyBetten(3);
+			//manager.insertBuchung(b);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void deleteBuchung(){
+		try {
+			DBManager manager = DBManager.getInstance();
 			
-			System.out.println("After:");
-			System.out.println(zist.get(0).getNummer());
+			//manager.deleteBuchung(3);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

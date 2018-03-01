@@ -93,7 +93,7 @@ public class Gast{
 	}
 	public Date getGebdat() {
 		String sDat = gebdat;
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		java.util.Date date;
 		try {
 			date = sdf.parse(sDat);

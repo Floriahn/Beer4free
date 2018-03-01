@@ -1,0 +1,10 @@
+
+public class Buchung {
+
+	private String id;
+	private String gid;
+	private String zid;
+	private String von;
+	private String bis;
+	privtae int anz;
+}

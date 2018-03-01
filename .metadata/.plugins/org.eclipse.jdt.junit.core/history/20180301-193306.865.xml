@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTests" project="TestDrivenHotelDB" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="UnitTests" time="0.559">
+    <testcase name="readGast" classname="UnitTests" time="0.516"/>
+    <testcase name="updateZimmer" classname="UnitTests" time="0.007"/>
+    <testcase name="deleteZimmer" classname="UnitTests" time="0.0"/>
+    <testcase name="readZimmer" classname="UnitTests" time="0.002"/>
+    <testcase name="updateGast" classname="UnitTests" time="0.003"/>
+    <testcase name="insertBuchung" classname="UnitTests" time="0.029"/>
+    <testcase name="deleteBuchung" classname="UnitTests" time="0.0"/>
+    <testcase name="insertZimmer" classname="UnitTests" time="0.001"/>
+    <testcase name="insertGast" classname="UnitTests" time="0.0"/>
+    <testcase name="verbindung" classname="UnitTests" time="0.0"/>
+    <testcase name="deleteGast" classname="UnitTests" time="0.001"/>
+  </testsuite>
+</testrun>

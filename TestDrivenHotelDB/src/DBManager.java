@@ -15,8 +15,13 @@ public class DBManager {
 	
 	private static final String READ_GAST_SUR_SQL = "SELECT * FROM gast where nachname like ? order by gid";
 	private static final String READ_ZIMMER_BETTEN_SQL = "SELECT * FROM zimmer where betten = ? order by zid";
+	private static final String READ_GAST_ID_SQL ="SELECT * FROM gast where gid = ?";
+	private static final String READ_ZIMMER_ID_SQL="SELECT * FROM zimmer where zid = ?";
+	
 	private static final String DELETE_GAST_SQL = "DELETE FROM gast WHERE gid=?";
 	private static final String DELETE_ZIMMER_SQL = "DELETE FROM zimmer WHERE zid=?";
+	private static final String DELETE_BUCHUNG_SQL = "DELETE FROM buchung WHERE buchungsid=?";
+	
 	private static final String UPDATE_GAST_SQL = "UPDATE gast SET nachname=?, geburtsdatum=?, land=?, name=?, telefonnummer=?, hausnummer=?, plz=? WHERE gid=?";
 	private static final String UPDATE_ZIMMER_SQL = "UPDATE zimmer SET betten=?, lage=?, eigenschaft=?, fernseher=?, preispronacht=?, nummer=? WHERE zid=?";
 	
@@ -94,6 +99,27 @@ public class DBManager {
 		System.out.println("INSERT EXECUTED");
 	}
 	
+	public void insertBuchung(Buchung buch){
+		insertstring = buch.getInsertString();
+		System.out.println(insertstring);
+		
+		try {
+			stmt = conn.prepareStatement(insertstring);
+			stmt.setInt(1, Integer.parseInt(buch.getZid()));
+			stmt.setInt(2, Integer.parseInt(buch.getGid()));
+			stmt.setDate(3, buch.getVon());
+			stmt.setDate(4, buch.getBis());
+			stmt.setInt(5, buch.getAnz());
+			stmt.setBoolean(6, buch.isBezahlt());
+			
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println("INSERT EXECUTED");
+	}
+	
 	//select * from gast where nachname like 'Griese%'
 	
 	public ArrayList<Gast> readGastbySurName(String strg) throws SQLException{
@@ -112,6 +138,18 @@ public class DBManager {
 		return garray;
 	}
 	
+	public Gast readGastbyID (int i) throws SQLException{
+		stmt = conn.prepareStatement(READ_GAST_ID_SQL);
+		stmt.setInt(1, i);
+		ResultSet rs = stmt.executeQuery();
+		rs.next();
+		Gast g = new Gast(rs.getString("nachname"), rs.getString("geburtsdatum"), rs.getString("plz"), rs.getString("land"), rs.getString("hausnummer"), rs.getString("telefonnummer"), rs.getString("name"));
+		g.setID(rs.getInt("gid")+"");
+		stmt.close();
+		rs.close();
+		return g;
+	}
+	
 	public ArrayList<Zimmer> readZimmerbyBetten(int i) throws SQLException{
 		stmt = conn.prepareStatement(READ_ZIMMER_BETTEN_SQL);
 		stmt.setInt(1, i);
@@ -125,6 +163,18 @@ public class DBManager {
 		stmt.close();
 		rs.close();
 		return zarray;
+	}
+	
+	public Zimmer readZimmerbyID (int i) throws SQLException{
+		stmt = conn.prepareStatement(READ_ZIMMER_ID_SQL);
+		stmt.setInt(1, i);
+		ResultSet rs = stmt.executeQuery();
+		rs.next();
+		Zimmer z = new Zimmer(rs.getString("nummer"), rs.getInt("betten"), rs.getBoolean("fernseher"), rs.getString("lage"), rs.getInt("preispronacht"), rs.getString("eigenschaft"));
+		z.setId(rs.getInt("zid")+"");
+		stmt.close();
+		rs.close();
+		return z;
 	}
 	
 	public void deleteGast(int id) throws SQLException{
@@ -141,7 +191,13 @@ public class DBManager {
 		stmt.close();
 	}
 	
-
+	public void deleteBuchung(int id) throws SQLException{
+		stmt = conn.prepareStatement(DELETE_BUCHUNG_SQL);
+		stmt.setInt(1, id);
+		stmt.executeUpdate();
+		stmt.close();
+	}
+	
 	public void updateGast(Gast gast){
 		try {
 			stmt = conn.prepareStatement(UPDATE_GAST_SQL);
