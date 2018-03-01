@@ -1,0 +1,72 @@
+
+public class Zimmer {
+
+	private String id;
+	private int betten;
+	private boolean fernseh;
+	private String lage;
+	private double preispronacht;
+	
+	private String eingenschaft;
+	
+
+	public Zimmer(int betten, boolean fernseh, String lage, double preispronacht, String eingenschaft) {
+		this.betten = betten;
+		this.fernseh = fernseh;
+		this.lage = lage;
+		this.preispronacht = preispronacht;
+		this.eingenschaft = eingenschaft;
+	}
+
+	public String getInsertString(){
+		
+		return;
+	}
+	
+	public int getBetten() {
+		return betten;
+	}
+
+	public void setBetten(int betten) {
+		this.betten = betten;
+	}
+
+	public boolean isFernseh() {
+		return fernseh;
+	}
+
+	public void setFernseh(boolean fernseh) {
+		this.fernseh = fernseh;
+	}
+
+	public String getLage() {
+		return lage;
+	}
+
+	public void setLage(String lage) {
+		this.lage = lage;
+	}
+
+	public double getPreispronacht() {
+		return preispronacht;
+	}
+
+	public void setPreispronacht(double preispronacht) {
+		this.preispronacht = preispronacht;
+	}
+
+	public String getEingenschaft() {
+		return eingenschaft;
+	}
+
+	public void setEingenschaft(String eingenschaft) {
+		this.eingenschaft = eingenschaft;
+	}
+
+	public String getId() {
+		return id;
+	}
+	
+	
+	
+}

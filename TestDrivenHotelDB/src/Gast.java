@@ -4,6 +4,15 @@ import java.text.SimpleDateFormat;
 
 public class Gast{
 	
+	/*
+	 * To Do:
+	 * -- Für nicht optionale getter !null abfrage einfüg. 
+	 * -- List container für begleitgäste einfügen
+	 */
+	
+	
+	
+	
 	private String id;
 	private String nachname;
 	private String gebdat;
@@ -11,8 +20,8 @@ public class Gast{
 	private String land;
 	private String hausnmr;
 	
-	private String number;
-	private String name;
+	private String number=null;
+	private String name=null;
 	
 	private String insert = "INSERT INTO gast (nachname, geburtsdatum, plz, land, hausnummer";
 	
@@ -25,10 +34,7 @@ public class Gast{
 		this.number = number;
 		this.name = name;
 	}
-	
-	public Gast(){
-		
-	}
+
 	
 	public String getInsertString(){
 		int x =0;
@@ -41,8 +47,9 @@ public class Gast{
 			x++;
 		}
 
-		insert += ") VALUES(?, ?, ?, ?";
-		for(int i=0;i<=x;i++){
+		insert += ") VALUES(?, ?, ?, ?, ?";
+		for(int i=0;i<x;i++){
+			System.out.println("Schleife");
 			insert += ", ?";
 		}
 		
@@ -108,6 +115,9 @@ public class Gast{
 	}
 	public String getHausnmr() {
 		return hausnmr;
+	}
+	public void setID(String x){
+		this.id=x;
 	}
 	
 }

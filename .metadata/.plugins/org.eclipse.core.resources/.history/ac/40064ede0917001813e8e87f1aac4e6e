@@ -1,0 +1,10 @@
+
+public class Zimmer {
+
+	private int betten;
+	private boolean fernseh;
+	private String lage;
+	private double preispronacht;
+	
+	private String eingenschaft;
+}

@@ -1,0 +1,124 @@
+import static org.junit.Assert.*;
+
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class UnitTests {
+
+	@Test
+	public void verbindung(){
+		try {
+			DBManager manager = DBManager.getInstance();
+			assertNotEquals(manager, null);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void insertGast(){
+		try {
+			DBManager manager = DBManager.getInstance();
+			Gast testg = new Gast("Friedels", "08-11-1998", "6561", "Oesterreich", "Oberer Kw. 4", "061/34", "Benni");
+			
+			//manager.insertGast(testg);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void insertZimmer() {
+			try {
+				DBManager manager = DBManager.getInstance();
+				Zimmer testz = new Zimmer("104B", 3, true, "Südseite", 50, "Parkettboden");
+				
+				//manager.insertZimmer(testz);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+	}
+	
+	@Test
+	public void readGast(){
+		try {
+			DBManager manager = DBManager.getInstance();
+			ArrayList<Gast> gasta = new ArrayList<>();
+			gasta=manager.readGastbySurName("Griese");
+			
+			System.out.println(gasta.get(2).getName());
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void readZimmer(){
+		try {
+			DBManager manager = DBManager.getInstance();
+			ArrayList<Zimmer> zimmera = new ArrayList<>();
+			zimmera=manager.readZimmerbyBetten(3);
+			
+			System.out.println(zimmera.get(0).getLage());
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void deleteGast() {
+		try {
+			DBManager manager = DBManager.getInstance();
+			
+			//manager.deleteGast(36);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void deleteZimmer() {
+		try {
+			DBManager manager = DBManager.getInstance();
+			
+			//manager.deleteZimmer(7);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void updateGast() {
+		try {
+			DBManager manager = DBManager.getInstance();
+			
+			ArrayList<Gast> gist = new ArrayList<>();
+			gist=manager.readGastbySurName("Griesebner");
+			
+			System.out.println("Test");
+			System.out.println(gist.get(0).getName());
+			
+			gist.get(0).setName("Daniel");
+			manager.updateGast(gist.get(0));
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void updateZimmer() {
+		
+	}
+}

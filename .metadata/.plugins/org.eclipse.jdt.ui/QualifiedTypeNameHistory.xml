@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="StrategyContext"/>
 <fullyQualifiedTypeName name="StrategyZIP"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Heizung"/>
 <fullyQualifiedTypeName name="Hausmeister"/>
@@ -17,6 +16,12 @@
 <fullyQualifiedTypeName name="java.sql.Statement"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
-<fullyQualifiedTypeName name="DBManager"/>
+<fullyQualifiedTypeName name="Gast"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="DBManager"/>
+<fullyQualifiedTypeName name="Zimmer"/>
 </qualifiedTypeNameHistroy>

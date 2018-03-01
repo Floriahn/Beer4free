@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="UnitTests" project="TestDrivenHotelDB" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="UnitTests" time="0.661">
+    <testcase name="readGast" classname="UnitTests" time="0.529"/>
+    <testcase name="readZimmer" classname="UnitTests" time="0.009"/>
+    <testcase name="insertZimmer" classname="UnitTests" time="0.0"/>
+    <testcase name="insertGast" classname="UnitTests" time="0.001"/>
+    <testcase name="verbindung" classname="UnitTests" time="0.0"/>
+    <testcase name="deleteGast" classname="UnitTests" time="0.122"/>
+  </testsuite>
+</testrun>
