@@ -5,8 +5,6 @@
 <fullyQualifiedTypeName name="IStrategy"/>
 <fullyQualifiedTypeName name="StrategyContext"/>
 <fullyQualifiedTypeName name="StrategyZIP"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Heizung"/>
 <fullyQualifiedTypeName name="Hausmeister"/>
 <fullyQualifiedTypeName name="IHeizObserver"/>
@@ -19,11 +17,17 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="Zimmer"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="Gast"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="InsertZimmer"/>
+<fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
+<fullyQualifiedTypeName name="java.awt.font.GlyphJustificationInfo"/>
+<fullyQualifiedTypeName name="Zimmer"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="Buchung"/>
 <fullyQualifiedTypeName name="DBManager"/>
 </qualifiedTypeNameHistroy>

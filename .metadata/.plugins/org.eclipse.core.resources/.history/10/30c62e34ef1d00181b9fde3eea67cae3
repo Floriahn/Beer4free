@@ -335,14 +335,7 @@ public class View {
 		JButton btnBuchen = new JButton("Buchen");
 		btnBuchen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Buchung b = new Buchung(gastl.get(counter), zimmerl.get(zcounter), vontxt.getText(), bistxt.getText(), Integer.parseInt(personentxt.getText()), bezahltchk.isSelected());
-				
-				try {
-					DBManager manager = DBManager.getInstance();
-					manager.insertBuchung(b);
-				} catch (ClassNotFoundException | SQLException e1) {
-					e1.printStackTrace();
-				}
+//				Buchung b = new Buchung(gastl.get(counter), zimmerl.get(zcounter), vontxt.getText(), bistxt.getText(), anz, bezahlt)
 			}
 		});
 		btnBuchen.setBounds(529, 343, 89, 23);
