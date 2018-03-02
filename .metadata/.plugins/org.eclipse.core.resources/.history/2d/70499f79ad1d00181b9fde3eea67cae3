@@ -291,11 +291,6 @@ public class View {
 		label.setBounds(66, 226, 284, 14);
 		panel_1.add(label);
 		
-		JLabel lblBuchen = new JLabel("Buchen");
-		lblBuchen.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBuchen.setBounds(539, 120, 79, 25);
-		frame.getContentPane().add(lblBuchen);
-		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		
