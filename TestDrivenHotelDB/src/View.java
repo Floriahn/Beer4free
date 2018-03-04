@@ -349,10 +349,38 @@ public class View {
 		frame.getContentPane().add(btnBuchen);
 		
 		JButton button_6 = new JButton("<-Buchungen");
+		button_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					DBManager manager = DBManager.getInstance();
+					ArrayList<Buchung> buch = new ArrayList<Buchung>();
+					buch = manager.readGidBuchung(Integer.parseInt(gastl.get(counter).getId()));
+					BuchungView view = new BuchungView(buch);
+					view.frame.setVisible(true);
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 		button_6.setBounds(429, 24, 122, 23);
 		frame.getContentPane().add(button_6);
 		
 		JButton btnBuchungen = new JButton("Buchungen->");
+		btnBuchungen.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					DBManager manager = DBManager.getInstance();
+					ArrayList<Buchung> buch = new ArrayList<Buchung>();
+					buch = manager.readZidBuchung(Integer.parseInt(zimmerl.get(zcounter).getId()));
+					BuchungView view = new BuchungView(buch);
+					view.frame.setVisible(true);
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
 		btnBuchungen.setBounds(609, 24, 122, 23);
 		frame.getContentPane().add(btnBuchungen);
 		

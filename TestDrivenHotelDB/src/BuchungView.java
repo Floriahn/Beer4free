@@ -11,9 +11,12 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class BuchungView {
 
@@ -71,12 +74,15 @@ public class BuchungView {
 				try {
 					DBManager manager = DBManager.getInstance();
 					DefaultTableModel model = (DefaultTableModel) table.getModel();
+					if(x>=0){
+					System.out.println("Index: "+x);
 					Buchung b = blist.get(x);
-					b.setVon((String) model.getValueAt(x, 3));
-					b.setBis((String) model.getValueAt(x, 4));
-					b.setAnz(Integer.parseInt((String)model.getValueAt(x, 5)));
-					b.setBezahlt((boolean) model.getValueAt(x, 6));
+					b.setVon(model.getValueAt(x, 3)+"");
+					b.setBis(model.getValueAt(x, 4)+"");
+					b.setAnz(Integer.parseInt((String) model.getValueAt(x, 5)));
+					b.setBezahlt(Boolean.parseBoolean((String) model.getValueAt(x, 6)));
 					manager.updateBuchung(b);
+					}
 				} catch (ClassNotFoundException | SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -117,6 +123,12 @@ public class BuchungView {
 		panel_1.add(scrollPane);
 		
 		table = new JTable();
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				System.out.println(table.getSelectedRow());
+			}
+		});
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -151,15 +163,14 @@ public class BuchungView {
 		
 		
 		Object rowData[] = new Object[7];
-		System.out.println(blist.size());
 		for (int i=0; i<blist.size();i++){
 			rowData[0]=blist.get(i).getId();
 			rowData[1]=blist.get(i).getZid();
 			rowData[2]=blist.get(i).getGid();
 			rowData[3]=blist.get(i).getVon();
 			rowData[4]=blist.get(i).getBis();
-			rowData[5]=blist.get(i).getAnz();
-			rowData[6]=blist.get(i).isBezahlt();
+			rowData[5]=blist.get(i).getAnz()+"";
+			rowData[6]=blist.get(i).isBezahlt()+"";
 			model.addRow(rowData);
 		}
 	}
