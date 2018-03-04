@@ -306,12 +306,12 @@ public class View {
 		frame.getContentPane().add(vontxt);
 		vontxt.setColumns(10);
 		
-		JLabel lblVon = new JLabel("Von:");
-		lblVon.setBounds(453, 168, 46, 14);
+		JLabel lblVon = new JLabel("Von: (YYYY-MM-DD)");
+		lblVon.setBounds(453, 168, 122, 14);
 		frame.getContentPane().add(lblVon);
 		
-		JLabel lblBis = new JLabel("Bis:");
-		lblBis.setBounds(609, 168, 46, 14);
+		JLabel lblBis = new JLabel("Bis: (YYYY-MM-DD)");
+		lblBis.setBounds(609, 168, 115, 14);
 		frame.getContentPane().add(lblBis);
 		
 		bistxt = new JTextField();
@@ -357,6 +357,21 @@ public class View {
 		frame.getContentPane().add(btnBuchungen);
 		
 		JButton button_7 = new JButton("<-Buchungen->");
+		button_7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				try {
+					DBManager manager = DBManager.getInstance();
+					ArrayList<Buchung> buch = new ArrayList<Buchung>();
+					buch = manager.readAllBuchung();
+					BuchungView view = new BuchungView(buch);
+					view.frame.setVisible(true);
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
 		button_7.setBounds(510, 55, 137, 23);
 		frame.getContentPane().add(button_7);
 		

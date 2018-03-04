@@ -17,6 +17,8 @@ public class DBManager {
 	private static final String READ_ZIMMER_BETTEN_SQL = "SELECT * FROM zimmer where betten = ? order by zid";
 	private static final String READ_GAST_ID_SQL ="SELECT * FROM gast where gid = ?";
 	private static final String READ_ZIMMER_ID_SQL="SELECT * FROM zimmer where zid = ?";
+	private static final String READ_BUCHUNG_ALL_SQL="SELECT * FROM buchung";
+	
 	
 	private static final String DELETE_GAST_SQL = "DELETE FROM gast WHERE gid=?";
 	private static final String DELETE_ZIMMER_SQL = "DELETE FROM zimmer WHERE zid=?";
@@ -24,6 +26,7 @@ public class DBManager {
 	
 	private static final String UPDATE_GAST_SQL = "UPDATE gast SET nachname=?, geburtsdatum=?, land=?, name=?, telefonnummer=?, hausnummer=?, plz=? WHERE gid=?";
 	private static final String UPDATE_ZIMMER_SQL = "UPDATE zimmer SET betten=?, lage=?, eigenschaft=?, fernseher=?, preispronacht=?, nummer=? WHERE zid=?";
+	private static final String UPDATE_BUCHUNG_SQL = "UPDATE buchung SET von=?, bis=?, anz=?, bezahlt=? WHERE buchungsid=?";
 	
 	static final String USER = "Testuser";
 	static final String PASS = "passwoo";
@@ -177,6 +180,20 @@ public class DBManager {
 		return z;
 	}
 	
+	public ArrayList<Buchung> readAllBuchung() throws SQLException{
+		stmt = conn.prepareStatement(READ_BUCHUNG_ALL_SQL);
+		ResultSet rs = stmt.executeQuery();
+		ArrayList<Buchung> blist = new ArrayList<Buchung>();
+		while(rs.next()){
+			Buchung b = new Buchung(readGastbyID(rs.getInt("gid")), readZimmerbyID(rs.getShort("zid")), rs.getString("von"), rs.getString("bis"), rs.getInt("anz"), rs.getBoolean("bezahlt"));
+			b.setId(rs.getInt("buchungsid")+"");
+			blist.add(b);
+		}
+		stmt.close();
+		rs.close();
+		return blist;
+	}
+	
 	public void deleteGast(int id) throws SQLException{
 		stmt = conn.prepareStatement(DELETE_GAST_SQL);
 		stmt.setInt(1, id);
@@ -228,6 +245,22 @@ public class DBManager {
 			stmt.setDouble(5, zimmer.getPreispronacht());
 			stmt.setString(6, zimmer.getNummer());
 			stmt.setInt(7, Integer.parseInt(zimmer.getId()));
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateBuchung(Buchung b){
+		try {
+			stmt = conn.prepareStatement(UPDATE_BUCHUNG_SQL);
+			stmt.setDate(1, b.getVon());
+			stmt.setDate(2, b.getBis());
+			stmt.setInt(3, b.getAnz());
+			stmt.setBoolean(4, b.isBezahlt());
+			stmt.setInt(5, Integer.parseInt(b.getId()));
 			stmt.executeUpdate();
 			stmt.close();
 		} catch (SQLException e) {
