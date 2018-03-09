@@ -26,7 +26,7 @@ public class UnitTests {
 			DBManager manager = DBManager.getInstance();
 			Gast testg = new Gast("Friedels", "1998-11-08", "6561", "Oesterreich", "Oberer Kw. 4", "061/34", "Benni");
 			
-			//manager.insertGast(testg);
+			manager.insertGast(testg);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -38,7 +38,7 @@ public class UnitTests {
 				DBManager manager = DBManager.getInstance();
 				Zimmer testz = new Zimmer("104B", 3, true, "Südseite", 50, "Parkettboden");
 				
-				//manager.insertZimmer(testz);
+				manager.insertZimmer(testz);
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (SQLException e) {
@@ -81,7 +81,7 @@ public class UnitTests {
 		try {
 			DBManager manager = DBManager.getInstance();
 			
-			//manager.deleteGast(36);
+			manager.deleteGast(36);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -92,7 +92,7 @@ public class UnitTests {
 		try {
 			DBManager manager = DBManager.getInstance();
 			
-			//manager.deleteZimmer(7);
+			manager.deleteZimmer(7);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -109,8 +109,8 @@ public class UnitTests {
 //			System.out.println("Test");
 //			System.out.println(gist.get(0).getName());
 //			
-//			gist.get(0).setName("flirian");
-//			manager.updateGast(gist.get(0));
+			gist.get(0).setName("flirian");
+			manager.updateGast(gist.get(0));
 //			
 //			gist = manager.readGastbySurName("Griesebner");
 //			
@@ -133,8 +133,8 @@ public class UnitTests {
 //			System.out.println("Test");
 //			System.out.println(zist.get(0).getNummer());
 //			
-//			zist.get(0).setNummer("123KAPPA");
-//			manager.updateZimmer(zist.get(0));
+			zist.get(0).setNummer("123KAPPA");
+			manager.updateZimmer(zist.get(0));
 //			
 //			zist = manager.readZimmerbyBetten(3);
 //			
@@ -155,7 +155,7 @@ public class UnitTests {
 			Zimmer z = manager.readZimmerbyID(5);
 			Buchung b = new Buchung(g, z, "2018-03-01", "2018-03-11", 3, false);
 			
-			//manager.insertBuchung(b);
+			manager.insertBuchung(b);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -167,7 +167,7 @@ public class UnitTests {
 		try {
 			DBManager manager = DBManager.getInstance();
 			
-			//manager.deleteBuchung(3);
+			manager.deleteBuchung(3);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -30,11 +30,11 @@ public class DBManager {
 	private static final String UPDATE_ZIMMER_SQL = "UPDATE zimmer SET betten=?, lage=?, eigenschaft=?, fernseher=?, preispronacht=?, nummer=? WHERE zid=?";
 	private static final String UPDATE_BUCHUNG_SQL = "UPDATE buchung SET von=?, bis=?, anz=?, bezahlt=? WHERE buchungsid=?";
 	
-	static final String USER = "Testuser";
-	static final String PASS = "passwoo";
+//	static final String USER = "Testuser";
+//	static final String PASS = "passwoo";
 	
-//	static final String USER = "postgres";
-//	static final String PASS = "password";
+	static final String USER = "postgres";
+	static final String PASS = "password";
 	
 	private Connection conn =null;
 	private PreparedStatement stmt = null;
