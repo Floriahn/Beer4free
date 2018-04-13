@@ -1,0 +1,22 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Ordner überordner = new Ordner("schule", 1);
+		File d = new File("deutsch", 15);
+		File m = new File("mathe", 15);
+		File e = new File("englisch", 15);
+		
+		Ordner abgaben = new Ordner("abgaben", 7);
+		File abg1 = new File("abgabe_01", 24);
+		
+		überordner.addChild(d);
+		überordner.addChild(m);
+		überordner.addChild(e);
+		
+		System.out.println(überordner.getSize());
+		überordner.shHirarchy();
+	}
+
+}

@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class Ordner implements IComponent{
+
+	String name;
+	int size;
+	
+	public Ordner(String name, int size){
+		this.name = name;
+		this.size = size;
+	}
+	
+	ArrayList<IComponent> files = new ArrayList<IComponent>();
+
+	public void addChild(IComponent file){
+		files.add(file);
+	}
+	
+	public ArrayList<IComponent> getChildren(){
+		return files;
+	}
+	
+	@Override
+	public void operation() {
+		System.out.println(name);
+	}
+
+	@Override
+	public int getSize() {
+		
+		return size;
+	}
+}

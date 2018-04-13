@@ -1,0 +1,5 @@
+
+public interface IComponent {
+	public void getHirarchy();
+	public int getSize();
+}

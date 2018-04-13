@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Ordner implements IComponent{
+
+	ArrayList<IComponent> files = new ArrayList<IComponent>();
+
+	public void addChild(IComponent file){
+		files.add(file);
+	}
+	
+	@Override
+	public void operation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

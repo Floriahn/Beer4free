@@ -1,0 +1,16 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Ordner überordner = new Ordner("schule", 1);
+		File d = new File("deutsch", 15);
+		File m = new File("mathe", 15);
+		File e = new File("englisch", 15);
+		
+		
+		
+
+	}
+
+}

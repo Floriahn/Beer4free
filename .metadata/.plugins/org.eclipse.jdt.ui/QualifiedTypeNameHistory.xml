@@ -24,11 +24,14 @@
 <fullyQualifiedTypeName name="javax.swing.WindowConstants"/>
 <fullyQualifiedTypeName name="java.awt.font.GlyphJustificationInfo"/>
 <fullyQualifiedTypeName name="Zimmer"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Buchung"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="DBManager"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="BuchungView"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="IComponent"/>
+<fullyQualifiedTypeName name="Ordner"/>
+<fullyQualifiedTypeName name="File"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,24 @@
+
+public class File implements IComponent{
+
+	String name;
+	int size;
+	
+	public File(String name, int size){
+		this,name = name;
+		this.size = size;
+	}
+	
+	@Override
+	public void operation() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
