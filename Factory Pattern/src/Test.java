@@ -1,0 +1,14 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		Factory fac = new Factory();
+		
+		IPizza pizz = fac.makePizza("Tonno");
+		
+		pizz.make();
+		pizz.getIngreds();
+		
+	}
+
+}

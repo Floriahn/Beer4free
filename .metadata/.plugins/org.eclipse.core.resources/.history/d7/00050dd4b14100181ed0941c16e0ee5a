@@ -1,0 +1,19 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Pizza pizza = new PizzaMitnehmen(new PizzaGroﬂ(new Funghi()));
+		
+		Pizza piz = new Funghi();
+		piz = new PizzaGroﬂ(piz);
+
+		System.out.println(piz.getBeschreibung());
+		
+		piz = new PizzaMitnehmen(piz);
+		
+		System.out.println(pizza.getBeschreibung());
+		System.out.println(piz.getPreis());
+	}
+
+}

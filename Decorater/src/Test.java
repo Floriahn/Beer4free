@@ -1,0 +1,13 @@
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Pizza piz = new Funghi();
+		piz = new PizzaGroﬂ(piz);
+
+		System.out.println(piz.getBeschreibung());
+		System.out.println("EUR: "+piz.getPreis()+"Ä");
+	}
+
+}

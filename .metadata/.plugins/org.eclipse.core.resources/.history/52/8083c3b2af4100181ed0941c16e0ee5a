@@ -1,0 +1,14 @@
+
+public class Funghi extends Pizza{
+
+	public Funghi(){
+		
+	}
+	
+	
+	public double getPreis() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

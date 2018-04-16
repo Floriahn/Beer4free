@@ -1,0 +1,5 @@
+
+public class Pizza {
+	String beschreibung;
+	public abstract double getPreis();
+}

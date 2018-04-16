@@ -1,0 +1,11 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Figur f = new Figur();
+		VorZuerCmd cmd = new VorZuerCmd(f, 2);
+		CommandRecorder rec = new CommandRecorder();
+		rec.ausführen(cmd);
+	}
+
+}

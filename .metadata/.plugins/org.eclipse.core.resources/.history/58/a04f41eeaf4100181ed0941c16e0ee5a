@@ -1,0 +1,8 @@
+
+public abstract class Decorator extends Pizza{
+
+	@Override
+	public abstract double getPreis();
+	
+
+}

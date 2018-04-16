@@ -1,0 +1,15 @@
+
+public class Salami implements IPizza{
+	private String[] ingreds = new String[4];
+
+	@Override
+	public void make() {
+		ingreds[0] = "Tomatensauce";
+	}
+
+	@Override
+	public void getIngreds() {
+		// TODO Auto-generated method stub
+		
+	}
+}

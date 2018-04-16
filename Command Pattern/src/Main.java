@@ -1,0 +1,22 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Figur f = new Figur();
+		VorZuerCmd cmd = new VorZuerCmd(f, 2);
+		CommandRecorder rec = new CommandRecorder();
+		rec.ausführen(cmd);
+		rec.ausführen(cmd);
+		rec.ausführen(cmd);
+		System.out.println(f.posX);
+		rec.undoSchritt();
+		System.out.println(f.posX);
+		rec.undoSchritt();
+		System.out.println(f.posX);
+		rec.redoSchritt();
+		System.out.println(f.posX);
+		rec.redoSchritt();
+		System.out.println(f.posX);
+	}
+
+}

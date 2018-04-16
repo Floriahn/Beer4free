@@ -1,0 +1,17 @@
+import java.util.Stack;
+
+public class CommandRecorder {
+
+	Stack<ICommand> mainStack = new Stack<>();
+	Stack<ICommand> secStack = new Stack<>();
+	
+	public void undoSchritt(){
+		secStack.add(mainStack.pop());
+	}
+	public void redoSchritt(){
+		
+	}
+	public void ausführen(ICommand c){
+		mainStack.add(c);
+	}
+}

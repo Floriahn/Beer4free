@@ -1,0 +1,16 @@
+
+public class PizzaGroﬂ extends Decorator{
+
+	public PizzaGroﬂ(Pizza pizza) {
+		super.pizza=pizza;
+	}
+	
+//	public String getBeschreibung(){
+//		return this.pizza.beschreibung + ", groﬂ";
+//	}
+	
+	public double getPreis() {
+		return this.pizza.getPreis() + 1.4;
+	}
+
+}

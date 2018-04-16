@@ -1,0 +1,4 @@
+
+public class Salami {
+	private String[] ingreds = new String[4];
+}

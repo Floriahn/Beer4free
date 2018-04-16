@@ -1,0 +1,18 @@
+
+public class Factory {
+
+	public IPizza makePizza(String pizza){
+		switch (pizza) {
+		case "mais":
+			return new Mais();
+		case "tonno":
+			return new Tonno();
+			break;
+		case "salami":
+			
+			break;
+		default:
+			break;
+		}
+	}
+}

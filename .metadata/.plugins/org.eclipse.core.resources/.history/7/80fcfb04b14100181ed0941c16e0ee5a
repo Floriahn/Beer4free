@@ -1,0 +1,15 @@
+
+public class PizzaMitnehmen {
+
+	public PizzaMitnehmen(Pizza pizza) {
+		super.pizza=pizza;
+	}
+	
+	public String getBeschreibung(){
+		return this.pizza.beschreibung + ", groﬂ";
+	}
+	
+	public double getPreis() {
+		return this.pizza.getPreis() + 1.4;
+	}
+}

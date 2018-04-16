@@ -1,0 +1,14 @@
+
+public class PizzaGroﬂ extends Decorator{
+
+	public PizzaGroﬂ(Pizza pizza) {
+		super.pizza=pizza;
+	}
+	
+	
+	public double getPreis() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
